@@ -1,0 +1,95 @@
+/* Custom Leaflet Map Dark Theme Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #050505 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Deep Midnight Ultra-Dark Mode Filter (Keyless OpenStreetMap) */
+.leaflet-tile-pane {
+  filter: brightness(0.6) invert(1) contrast(1.35) hue-rotate(200deg) saturate(0.3);
+}
+
+/* Override Leaflet default div-icon box styling & smooth movement */
+.leaflet-div-icon,
+.custom-car-icon,
+.custom-uber-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Smooth movement for driver car markers during position updates */
+.custom-car-icon {
+  transition: transform 0.8s linear, top 0.8s linear, left 0.8s linear;
+}
+
+/* Disable marker transitions when map is zooming, panning, or animating to prevent cars from jumping/sliding out of position */
+.leaflet-zoom-anim .leaflet-marker-icon,
+.leaflet-zooming .leaflet-marker-icon {
+  transition: none !important;
+}
+
+/* Custom Marker Styling & Rotations */
+.driver-car-marker {
+  display: block;
+  width: 26px;
+  height: 44px;
+  transition: transform 0.4s ease-out, filter 0.2s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+}
+
+.driver-car-marker:hover {
+  transform: scale(1.15);
+  z-index: 1000 !important;
+}
+
+.driver-assigned {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) !important;
+}
+
+/* Uber Map Pin Styling */
+.uber-map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Leaflet Popup customization */
+.leaflet-popup-content-wrapper {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+  padding: 2px !important;
+}
+
+.leaflet-popup-tip {
+  background: #1a1a1a !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #777777 !important;
+  font-size: 10px !important;
+}
+
